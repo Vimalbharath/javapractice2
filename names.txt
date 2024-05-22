@@ -1,2 +1,6 @@
 Vimal
 Bharath
+
+
+(start+end)/2
+(end-start)/2+start
