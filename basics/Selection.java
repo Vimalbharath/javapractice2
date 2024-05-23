@@ -22,9 +22,19 @@ public class Selection {
         return max;
     }
 
+    private static int maxindexx(int[] arr, int j) {
+        int max = 0;
+        for (int i = 0; i < j; i++) {
+            if (arr[i] > arr[max]) {
+                max = i;
+            }
+        }
+        return max;
+    }
+
     private static int[] selectionsort(int[] arr) {
-        for (int i = arr.length; i > 0; i--) {
-            int max = maxindex(arr);
+        for (int i = arr.length - 1; i > 0; i--) {
+            int max = maxindexx(arr, i);
             swap(arr, max, i);
         }
 
@@ -33,7 +43,7 @@ public class Selection {
 
     private static void swap(int arr[], int i, int j) {
         int temp = arr[i];
-        arr[i] = arr[i - 1];
-        arr[i - 1] = temp;
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 }
