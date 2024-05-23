@@ -12,17 +12,16 @@ public class Bubble {
 
     private static int[] bubblesort(int[] arr) {
 
-        int j = arr.length;
-        if (j < 2) {
+        if (arr.length < 2) {
             return arr;
         }
-        while (j > 0) {
+        for (int j = arr.length; j > 0; j--) {
             for (int i = 1; i < j; i++) {
                 if (arr[i - 1] > arr[i]) {
                     swap(arr, i, i - 1);
                 }
             }
-            j--;
+
         }
         return arr;
 
