@@ -4,3 +4,7 @@ Bharath
 
 (start+end)/2
 (end-start)/2+start
+
+Bubble - swap - n -n2 - order
+Selection - Max - n2 - n2 - no order
+Insertion - Partial - n -n2 - order
