@@ -22,9 +22,9 @@ public class Selection {
         return max;
     }
 
-    private static int maxindexx(int[] arr, int j) {
+    private static int maxindexx(int[] arr, int last) {
         int max = 0;
-        for (int i = 0; i < j; i++) {
+        for (int i = 0; i < last; i++) {
             if (arr[i] > arr[max]) {
                 max = i;
             }
@@ -33,9 +33,9 @@ public class Selection {
     }
 
     private static int[] selectionsort(int[] arr) {
-        for (int i = arr.length - 1; i > 0; i--) {
-            int max = maxindexx(arr, i);
-            swap(arr, max, i);
+        for (int last = arr.length - 1; last > 0; last--) {
+            int max = maxindexx(arr, last);
+            swap(arr, max, last);
         }
 
         return arr;
