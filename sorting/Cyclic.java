@@ -5,8 +5,19 @@ import java.util.Arrays;
 public class Cyclic {
     public static void main(String[] args) {
         int[] arr = { 8, 7, 6, 5, 4, 3, 2, 1 };
-        cyclicsort(arr);
+        cyclicsort2(arr);
         System.out.println(Arrays.toString(arr));
+    }
+
+    private static void cyclicsort2(int[] arr) {
+        int i = 0;
+        while (i < arr.length) {
+            int correct = arr[i] - 1;
+            if (arr[i] != correct) {
+                swap(arr, i, arr[correct]);
+            }
+
+        }
     }
 
     private static void cyclicsort(int[] arr) {
