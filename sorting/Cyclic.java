@@ -10,9 +10,9 @@ public class Cyclic {
     }
 
     private static void cyclicsort(int[] arr) {
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] != i - 1) {
-                swap(arr, i, arr[i]);
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != arr[arr[i] - 1]) {
+                swap(arr, i, arr[i] - 1);
             }
         }
     }
