@@ -14,9 +14,9 @@ public class Cyclic {
         while (i < arr.length) {
             int correct = i + 1;
             if (arr[i] != correct) {
-                swap(arr, arr[i], correct);
+                swap(arr, i, arr[correct]);
             }
-
+            i++;
         }
     }
 
