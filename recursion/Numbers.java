@@ -9,7 +9,9 @@ public class Numbers {
         if (i == 0) {
             return;
         }
-        System.out.println(i);
+
         numbers(i - 1);
+
+        System.out.println(i);
     }
 }
