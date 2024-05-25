@@ -2,7 +2,7 @@ package recursion;
 
 public class Reverse {
     public static void main(String[] args) {
-        int ans = reversenum3(14664);
+        int ans = reversenum3(12345678);
         System.out.println(ans);
     }
 
@@ -13,10 +13,10 @@ public class Reverse {
 
     private static int helper(int i, int noofdigits) {
 
-        if (i == 0) {
-            return ans;
+        if (i % 10 == i) {
+            return i;
         }
-        int ans=(i % 10)*10 power noofdigits+helper (i/10,noofdigits - 1);
+        int ans = (i % 10) * (int) Math.pow(10, noofdigits - 1) + helper(i / 10, noofdigits - 1);
         return ans;
     }
 
