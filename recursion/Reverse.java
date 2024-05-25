@@ -2,8 +2,22 @@ package recursion;
 
 public class Reverse {
     public static void main(String[] args) {
-        int ans = reversenum2(14664);
+        int ans = reversenum3(14664);
         System.out.println(ans);
+    }
+
+    private static int reversenum3(int i) {
+        int noofdigits = (Int) Math.log(i);
+        return helper(i, noofdigits);
+    }
+
+    private static int helper(int i, int noofdigits) {
+
+        if (i == 0) {
+            return ans;
+        }
+
+        return helper(i / 10, noofdigits - 1);
     }
 
     private static int reversenum1(int i) {
