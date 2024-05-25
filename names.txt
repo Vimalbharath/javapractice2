@@ -13,3 +13,5 @@ Merge,Quick- Recursion
 Count, Radix
 
 int noofdigits = (int) Math.log10(i)+1;
+arraylist initialize 
+public static ArrayList<Integer> list = new ArrayList<>();
