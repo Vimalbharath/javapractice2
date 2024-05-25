@@ -2,7 +2,7 @@ package recursion;
 
 public class Reverse {
     public static void main(String[] args) {
-        int ans = reversenum1(14664);
+        int ans = reversenum2(14664);
         System.out.println(ans);
     }
 
@@ -14,6 +14,16 @@ public class Reverse {
         }
 
         return ans;
+    }
+
+    static int answer = 0;
+
+    private static int reversenum2(int i) {
+        if (i == 0) {
+            return answer;
+        }
+        answer = (answer * 10) + i % 10;
+        return reversenum2(i / 10);
     }
 
     private static int reversenum(int i) {
