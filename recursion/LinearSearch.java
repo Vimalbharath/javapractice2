@@ -16,7 +16,7 @@ public class LinearSearch {
         // if (arr[i] == target) {
         // return true;
         // }
-        return arr[i] == target || linear(arr, target, i++);
+        return arr[i] == target || linear(arr, target, i + 1);
     }
 
 }
