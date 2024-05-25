@@ -16,7 +16,7 @@ public class Pattern {
             pattern2(r, c + 1);
         } else {
             System.out.println();
-            pattern2(r + 1, 0);
+            pattern2(r - 1, 0);
         }
 
     }
