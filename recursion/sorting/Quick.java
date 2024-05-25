@@ -16,20 +16,22 @@ public class Quick {
         }
         int s = low;
         int e = high;
-        int mid = s + (s - e) / 2;
+        int mid = s + (e - s) / 2;
 
         while (s <= e) {
-            if (arr[e] < arr[mid]) {
+            while (arr[e] > arr[mid]) {
                 // swap(arr, e, s);
                 e--;
             }
-            if (arr[s] > arr[mid]) {
+            while (arr[s] < arr[mid]) {
                 // swap(arr, s, e);
                 s++;
             }
-            swap(arr, s, e);
-            e--;
-            s++;
+            if (s <= e) {
+                swap(arr, s, e);
+                e--;
+                s++;
+            }
         }
         quicksort(arr, low, e);
         quicksort(arr, s, high);
