@@ -27,18 +27,18 @@ public class Merge {
         int i = 0;
         int j = 0;
         int k = 0;
-        while (i < first.length) {
-            while (j < second.length) {
-                if (first[i] < second[j]) {
-                    mix[k] = first[i];
-                    i++;
-                    k++;
-                } else {
-                    mix[k] = second[j];
-                    j++;
-                    k++;
-                }
+        while (i < first.length && j < second.length) {
+            // while (j < second.length) {
+            if (first[i] < second[j]) {
+                mix[k] = first[i];
+                i++;
+                k++;
+            } else {
+                mix[k] = second[j];
+                j++;
+                k++;
             }
+            // }
         }
         while (i < first.length) {
             mix[k] = first[i];
