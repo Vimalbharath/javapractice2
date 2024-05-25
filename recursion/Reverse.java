@@ -7,7 +7,7 @@ public class Reverse {
     }
 
     private static int reversenum3(int i) {
-        int noofdigits = (Int) Math.log(i);
+        int noofdigits = (int) Math.log10(i) + 1;
         return helper(i, noofdigits);
     }
 
@@ -16,8 +16,8 @@ public class Reverse {
         if (i == 0) {
             return ans;
         }
-
-        return helper(i / 10, noofdigits - 1);
+        int ans=(i % 10)*10 power noofdigits+helper (i/10,noofdigits - 1);
+        return ans;
     }
 
     private static int reversenum1(int i) {
