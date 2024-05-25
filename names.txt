@@ -11,3 +11,5 @@ Insertion - Partial - n -n2 - order
 Cyclic 1-N N correct
 Merge,Quick- Recursion
 Count, Radix
+
+int noofdigits = (int) Math.log10(i)+1;
