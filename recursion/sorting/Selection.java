@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class Selection {
     public static void main(String[] args) {
         int[] arr = { 4, 3, 2, 1 };
+        // swap(arr, 0, 3);
         selectionsort(arr, arr.length, 0, 0);
         System.out.println(Arrays.toString(arr));
     }
@@ -19,10 +20,10 @@ public class Selection {
             } else {
                 selectionsort(arr, r, c + 1, max);
             }
+        } else {
+            swap(arr, max, r - 1);
+            selectionsort(arr, r - 1, 0, 0);
         }
-        swap(arr, max, c);
-        selectionsort(arr, r - 1, 0, 0);
-
     }
 
     private static void swap(int[] arr, int max, int c) {
