@@ -11,7 +11,7 @@ public class Quick {
     }
 
     private static void quicksort(int[] arr, int low, int high) {
-        if (low <= high) {
+        if (low >= high) {
             return;
         }
         int s = low;
