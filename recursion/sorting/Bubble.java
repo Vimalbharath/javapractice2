@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Bubble {
     public static void main(String[] args) {
         int[] arr = { 4, 3, 2, 1 };
-        bubblesort(arr, arr.length, 0);
+        bubblesort(arr, arr.length - 1, 0);
         System.out.println(Arrays.toString(arr));
     }
 
@@ -13,12 +13,14 @@ public class Bubble {
         if (c > r) {
             return;
         }
-        if (arr[c] > arr[c + 1]) {
-            int temp = arr[c];
-            arr[c] = arr[c + 1];
-            arr[c + 1] = temp;
+        if (c < r) {
+            if (arr[c] > arr[c + 1]) {
+                int temp = arr[c];
+                arr[c] = arr[c + 1];
+                arr[c + 1] = temp;
+            }
             bubblesort(arr, r, c + 1);
         }
-        bubblesort(arr, r - 1, 0);
+        // bubblesort(arr, r - 1, 0);
     }
 }
