@@ -10,7 +10,7 @@ public class Bubble {
     }
 
     private static void bubblesort(int[] arr, int r, int c) {
-        if (c > r) {
+        if (r == 0) {
             return;
         }
         if (c < r) {
@@ -21,6 +21,6 @@ public class Bubble {
             }
             bubblesort(arr, r, c + 1);
         }
-        // bubblesort(arr, r - 1, 0);
+        bubblesort(arr, r - 1, 0);
     }
 }
