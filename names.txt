@@ -15,3 +15,6 @@ Count, Radix
 int noofdigits = (int) Math.log10(i)+1;
 arraylist initialize 
 public static ArrayList<Integer> list = new ArrayList<>();
+
+Merge Sort - Divide merge - N log(n) - n2 - space extra array n - inplace, Array.copyOfRange
+Quick Sort - Pivot - N log(n) - n2 - space 0
