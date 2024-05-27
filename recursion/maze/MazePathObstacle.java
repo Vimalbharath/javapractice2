@@ -9,25 +9,27 @@ public class MazePathObstacle {
                 { true, false, true },
                 { true, true, true },
         };
-        ArrayList<String> ans = path(3, 3, "", box);
+        ArrayList<String> ans = path(0, 0, "", box);
         System.out.println(ans);
     }
 
     private static ArrayList<String> path(int i, int j, String p, boolean[][] box) {
-        if (i == 1 && j == 1) {
+        if (i == 2 && j == 2) {
             ArrayList<String> list = new ArrayList<>();
             list.add(p);
             return list;
         }
         // String ch = "";
         ArrayList<String> fulllist = new ArrayList<>();
-        if (i > 1) {
-            fulllist.addAll(path(i - 1, j, p + "R", box));
-        }
-        if (j > 1) {
-            fulllist.addAll(path(i, j - 1, p + "D", box));
-        }
+        if (box[i][j] != false) {
 
+            if (i < 2) {
+                fulllist.addAll(path(i + 1, j, p + "R", box));
+            }
+            if (j < 2) {
+                fulllist.addAll(path(i, j + 1, p + "D", box));
+            }
+        }
         return fulllist;
 
     }
