@@ -14,7 +14,7 @@ public class MazePathObstacle {
     }
 
     private static ArrayList<String> path(int i, int j, String p, boolean[][] box) {
-        if (i == 2 && j == 2) {
+        if (i == box.length - 1 && j == box[0].length - 1) {
             ArrayList<String> list = new ArrayList<>();
             list.add(p);
             return list;
@@ -23,10 +23,10 @@ public class MazePathObstacle {
         ArrayList<String> fulllist = new ArrayList<>();
         if (box[i][j] != false) {
 
-            if (i < 2) {
+            if (i < box.length - 1) {
                 fulllist.addAll(path(i + 1, j, p + "R", box));
             }
-            if (j < 2) {
+            if (j < box[0].length - 1) {
                 fulllist.addAll(path(i, j + 1, p + "D", box));
             }
         }
