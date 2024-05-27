@@ -5,8 +5,9 @@ import java.util.Arrays;
 public class NQueens {
 
     public static void main(String[] args) {
-        boolean[][] board = new boolean[3][3];
-        int count = queens(board, board.length);
+        int n = 4;
+        boolean[][] board = new boolean[n][n];
+        int count = queens(board, 0);
         System.out.println(count);
     }
 
@@ -51,7 +52,7 @@ public class NQueens {
         // right
         int right = Math.min(row, board.length - col - 1);
         for (int i = 1; i <= right; i++) {
-            if (board[row - i][col - i]) {
+            if (board[row - i][col + i]) {
                 return false;
             }
         }
