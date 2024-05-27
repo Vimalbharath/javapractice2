@@ -15,7 +15,7 @@ public class Permutation {
         for (int i = 0; i < 3; i++) {
 
             // p = up.substring(0, i) + ch;
-            p = up.substring(0, i) + ch + up.substring(i, up.length());
+            p = up.substring(0, i) + ch + up.substring(i + 1, 3);
             System.out.println(p);
             // p = up.substring(i) + ch;
 
