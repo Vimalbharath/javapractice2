@@ -11,11 +11,16 @@ public class Permutation {
             return;
         }
         char ch = up.charAt(0);
-        for (int i = 0; i < up.length(); i++) {
+        for (int i = 0; i <= p.length(); i++) {
+
+            String f = p.substring(0, i);
+            String s = p.substring(i, p.length());
+
+            permut(f + ch + s, up.substring(1));
 
             // p = up.substring(0, i) + ch;
-            p = up.substring(0, i) + ch + up.substring(i, up.length());
-            System.out.println(p);
+            // p = up.substring(0, i) + ch + up.substring(i, up.length());
+            // System.out.println(p);
             // p = up.substring(i) + ch;
 
         }
