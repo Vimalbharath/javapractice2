@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class MazePathObstacle {
     public static void main(String[] args) {
         boolean[][] box = {
+                { true, true, false },
                 { true, true, true },
-                { true, false, true },
                 { true, true, true },
         };
         ArrayList<String> ans = path(0, 0, "", box);
@@ -24,10 +24,10 @@ public class MazePathObstacle {
         if (box[i][j] != false) {
 
             if (i < box.length - 1) {
-                fulllist.addAll(path(i + 1, j, p + "R", box));
+                fulllist.addAll(path(i + 1, j, p + "D", box));
             }
             if (j < box[0].length - 1) {
-                fulllist.addAll(path(i, j + 1, p + "D", box));
+                fulllist.addAll(path(i, j + 1, p + "R", box));
             }
         }
         return fulllist;
