@@ -31,18 +31,19 @@ public class MazePathAllPic {
         // String ch = "";
 
         if (box[c][r]) {
+            path[c][r] = 1;
             box[c][r] = false;
             if (r < box.length - 1) {
-                path(r + 1, c, ch + "D", box, path);
+                path(r + 1, c, ch + "R", box, path);
             }
             if (c < box[0].length - 1) {
-                path(r, c + 1, ch + "R", box, path);
+                path(r, c + 1, ch + "D", box, path);
             }
             if (r > 0) {
-                path(r - 1, c, ch + "U", box, path);
+                path(r - 1, c, ch + "L", box, path);
             }
             if (c > 0) {
-                path(r, c - 1, ch + "L", box, path);
+                path(r, c - 1, ch + "U", box, path);
             }
             box[c][r] = true;
         }
