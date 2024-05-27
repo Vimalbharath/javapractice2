@@ -14,6 +14,7 @@ public class NQueens {
     private static int queens(boolean[][] board, int row) {
         if (row == board.length) {
             display(board);
+            System.out.println();
             return 1;
         }
         int count = 0;
@@ -29,7 +30,15 @@ public class NQueens {
 
     private static void display(boolean[][] board) {
         for (boolean[] ans : board) {
-            Arrays.toString(ans);
+            // System.out.println(Arrays.toString(ans));
+            for (boolean element : ans) {
+                if (element) {
+                    System.out.print("Q ");
+                } else {
+                    System.out.print("X ");
+                }
+            }
+            System.out.println();
         }
     }
 
