@@ -10,9 +10,9 @@ public class Maze {
         if (i == 1 || j == 1) {
             return 1;
         }
-        int ans = 0;
-        ans = ans + path(i - 1, j);
-        ans = ans + path(i, j - 1);
-        return ans;
+
+        int left = path(i - 1, j);
+        int right = path(i, j - 1);
+        return left + right;
     }
 }
