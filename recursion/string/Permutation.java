@@ -2,7 +2,7 @@ package recursion.string;
 
 public class Permutation {
     public static void main(String[] args) {
-        permut("", "abc");
+        permut("", "a");
     }
 
     private static void permut(String p, String up) {
@@ -10,11 +10,13 @@ public class Permutation {
             System.out.println(p);
             return;
         }
-        p = p + up.charAt(0);
-        up = up.substring(1);
+        char ch = up.charAt(0);
+        // up = up.substring(1);
         for (int i = 0; i < p.length(); i++) {
-            p = up.charAt(i) + p + up.charAt(i);
-            permut(p, up);
+
+            p = p + (ch + up.charAt(i));
+
+            System.out.println(p);
         }
     }
 }
