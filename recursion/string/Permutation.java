@@ -13,6 +13,7 @@ public class Permutation {
         p = p + up.charAt(0);
         up = up.substring(1);
         for (int i = 0; i < p.length(); i++) {
+            p = up.charAt(i) + p + up.charAt(i);
             permut(p, up);
         }
     }
