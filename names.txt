@@ -18,3 +18,10 @@ public static ArrayList<Integer> list = new ArrayList<>();
 
 Merge Sort - Divide merge - N log(n) - n2 - space extra array n - inplace, Array.copyOfRange
 Quick Sort - Pivot - N log(n) - n2 - space 0
+
+String 
+Skip Letter search in array,array 2d
+Subsequence p,up timeline
+Permutation for loop
+Maze DR
+Backtracking  UDRL
