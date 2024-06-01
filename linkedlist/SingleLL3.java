@@ -135,6 +135,19 @@ public class SingleLL3 {
 
     }
 
+    public Node findNodeByVal(int value) {
+        Node temp = head;
+
+        while (temp != null) {
+            if (temp.val == value) {
+                return temp;
+            }
+            temp = temp.next;
+        }
+        return null;
+
+    }
+
     public void display() {
         Node temp = head;
         // for (int i = size; i > 0; i--) {
