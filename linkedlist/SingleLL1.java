@@ -26,17 +26,21 @@ public class SingleLL1 {
             size = size + 1;
         }
 
-        System.out.println(size);
+        // System.out.println(size);
 
     }
 
     public void display(Node head) {
         Node temp = head;
-        while (size > 0) {
-            System.out.println(temp.val);
+        for (int i = size; i > 0; i--) {
+            System.out.print(temp.val + " -> ");
             temp = temp.next;
 
         }
+
+        System.out.print("END");
+
+        System.out.println();
 
     }
 
