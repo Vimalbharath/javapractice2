@@ -56,15 +56,17 @@ public class SingleLL2 {
 
     }
 
-    public void deleteLast() {
-        if (head == null) {
-            return;
+    public int deleteLast() {
+        if (size <= 1) {
+            return deleteFirst();
         }
 
         Node temp = findNode(size - 1);
+        int val = tail.val;
         tail = temp;
         tail.next = null;
         size = size - 1;
+        return val;
 
     }
 
@@ -141,8 +143,8 @@ public class SingleLL2 {
         list.add(100, 2);
         list.display();
         System.out.println(list.deleteFirst());
-        ;
-        list.deleteLast();
+
+        System.out.println(list.deleteLast());
         list.display();
         // System.out.println(list);
     }
