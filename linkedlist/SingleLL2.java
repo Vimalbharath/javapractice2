@@ -24,16 +24,17 @@ public class SingleLL2 {
         size = 0;
     }
 
-    void addFirst(int val) {
+    public void addFirst(int val) {
         Node node = new Node(val);
-        if (head == null) {
-            head = node;
-            size = size + 1;
-        } else {
-            node.next = head;
-            head = node;
-            size = size + 1;
+
+        node.next = head;
+        head = node;
+        if (tail == null) {
+            tail = head;
+
         }
+
+        size = size + 1;
 
         // System.out.println(size);
 
