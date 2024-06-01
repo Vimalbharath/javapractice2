@@ -40,6 +40,25 @@ public class SingleLL2 {
 
     }
 
+    public void deleteFirst() {
+        if (head == null) {
+            return;
+        }
+        if (head.next == null) {
+            head = null;
+            size = size - 1;
+        }
+
+        if (head.next != null) {
+            head = head.next;
+
+            size = size - 1;
+        }
+
+        System.out.println(size);
+
+    }
+
     void addLast(int val) {
 
         if (tail == null) {
@@ -95,10 +114,12 @@ public class SingleLL2 {
         SingleLL2 list = new SingleLL2();
         list.addFirst(21);
         // list.display(list.head);
-        list.addFirst(22);
-        list.addFirst(23);
-        list.addLast(20);
-        list.add(100, 2);
+        // list.addFirst(22);
+        // list.addFirst(23);
+        // list.addLast(20);
+        // list.add(100, 2);
+        list.display();
+        list.deleteFirst();
         list.display();
         // System.out.println(list);
     }
