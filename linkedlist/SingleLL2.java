@@ -41,21 +41,14 @@ public class SingleLL2 {
     }
 
     void addLast(int val) {
-        Node node = new Node(val);
-        if (head == null) {
-            head = node;
-            size = size + 1;
-        } else {
-            Node temp = head;
-            Node last = temp;
-            while (temp != null) {
-                last = temp;
-                temp = temp.next;
 
-            }
-            last.next = node;
-            size = size + 1;
+        if (tail == null) {
+            addFirst(val);
         }
+        Node node = new Node(val);
+        tail.next = node;
+        tail = node;
+        size = size + 1;
 
         // System.out.println(size);
 
