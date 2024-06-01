@@ -32,7 +32,7 @@ public class SingleLL1 {
 
     public void display(Node head) {
         Node temp = head;
-        for (int i = size; i > 0; i--) {
+        while (size > 0) {
             System.out.println(temp.val);
             temp = temp.next;
 
