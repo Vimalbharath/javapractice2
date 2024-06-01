@@ -72,8 +72,11 @@ public class SingleLL3 {
 
     public int deleteAt(int index) {
 
-        if (size <= 1 && index == 0) {
+        if (index <= 1) {
             return deleteFirst();
+        }
+        if (index == size) {
+            return deleteLast();
         }
 
         Node temp = findNode(index - 1);
@@ -159,7 +162,7 @@ public class SingleLL3 {
         System.out.println(list.deleteFirst());
 
         System.out.println(list.deleteLast());
-        list.deleteAt(1);
+        System.out.println(list.deleteAt(2));
         list.deleteAt(1);
         list.deleteAt(1);
         list.display();
