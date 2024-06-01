@@ -54,6 +54,28 @@ public class SingleLL2 {
 
     }
 
+    void add(int val, int index) {
+
+        if (index == 0) {
+            addFirst(val);
+            return;
+        }
+
+        Node temp = head;
+
+        for (int i = 1; i < index; i++) {
+
+            temp = temp.next;
+
+        }
+        Node node = new Node(val, temp.next);
+
+        temp.next = node;
+        size = size + 1;
+    }
+
+    // System.out.println(size);
+
     public void display() {
         Node temp = head;
         // for (int i = size; i > 0; i--) {
@@ -76,6 +98,7 @@ public class SingleLL2 {
         list.addFirst(22);
         list.addFirst(23);
         list.addLast(20);
+        list.add(100, 2);
         list.display();
         // System.out.println(list);
     }
