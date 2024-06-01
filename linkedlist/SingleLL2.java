@@ -61,7 +61,7 @@ public class SingleLL2 {
 
     }
 
-    public void display(Node head) {
+    public void display() {
         Node temp = head;
         // for (int i = size; i > 0; i--) {
         while (temp != null) {
@@ -83,7 +83,7 @@ public class SingleLL2 {
         list.addFirst(22);
         list.addFirst(23);
         list.addLast(20);
-        list.display(list.head);
+        list.display();
         // System.out.println(list);
     }
 
