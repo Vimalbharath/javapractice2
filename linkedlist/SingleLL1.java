@@ -30,9 +30,31 @@ public class SingleLL1 {
 
     }
 
+    void addLast(int val) {
+        Node node = new Node(val);
+        if (head == null) {
+            head = node;
+            size = size + 1;
+        } else {
+            Node temp = head;
+            Node last = temp;
+            while (temp != null) {
+                last = temp;
+                temp = temp.next;
+
+            }
+            last.next = node;
+            size = size + 1;
+        }
+
+        // System.out.println(size);
+
+    }
+
     public void display(Node head) {
         Node temp = head;
-        for (int i = size; i > 0; i--) {
+        // for (int i = size; i > 0; i--) {
+        while (temp != null) {
             System.out.print(temp.val + " -> ");
             temp = temp.next;
 
@@ -50,6 +72,7 @@ public class SingleLL1 {
         // list.display(list.head);
         list.addFirst(22);
         list.addFirst(23);
+        list.addLast(20);
         list.display(list.head);
         // System.out.println(list);
     }
