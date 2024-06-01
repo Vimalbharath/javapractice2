@@ -47,6 +47,7 @@ public class SingleLL2 {
         if (head.next == null) {
             head = null;
             size = size - 1;
+            return;
         }
 
         if (head.next != null) {
@@ -56,6 +57,18 @@ public class SingleLL2 {
         }
 
         System.out.println(size);
+
+    }
+
+    public void deleteLast() {
+        if (head == null) {
+            return;
+        }
+
+        Node temp = findNode(size - 1);
+        tail = temp;
+        tail.next = null;
+        size = size - 1;
 
     }
 
@@ -95,6 +108,18 @@ public class SingleLL2 {
 
     // System.out.println(size);
 
+    public Node findNode(int index) {
+        Node temp = head;
+
+        for (int i = 1; i < index; i++) {
+
+            temp = temp.next;
+
+        }
+        return temp;
+
+    }
+
     public void display() {
         Node temp = head;
         // for (int i = size; i > 0; i--) {
@@ -114,12 +139,13 @@ public class SingleLL2 {
         SingleLL2 list = new SingleLL2();
         list.addFirst(21);
         // list.display(list.head);
-        // list.addFirst(22);
-        // list.addFirst(23);
-        // list.addLast(20);
-        // list.add(100, 2);
+        list.addFirst(22);
+        list.addFirst(23);
+        list.addLast(20);
+        list.add(100, 2);
         list.display();
         list.deleteFirst();
+        list.deleteLast();
         list.display();
         // System.out.println(list);
     }
