@@ -70,6 +70,20 @@ public class SingleLL3 {
 
     }
 
+    public int deleteAt(int index) {
+
+        if (size <= 1 && index == 0) {
+            return deleteFirst();
+        }
+
+        Node temp = findNode(index - 1);
+        int val = temp.next.val;
+        temp.next = temp.next.next;
+        size = size - 1;
+        return val;
+
+    }
+
     void addLast(int val) {
 
         if (tail == null) {
@@ -145,6 +159,9 @@ public class SingleLL3 {
         System.out.println(list.deleteFirst());
 
         System.out.println(list.deleteLast());
+        list.deleteAt(1);
+        list.deleteAt(1);
+        list.deleteAt(1);
         list.display();
         // System.out.println(list);
     }
