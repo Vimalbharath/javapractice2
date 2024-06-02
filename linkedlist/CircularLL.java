@@ -49,12 +49,28 @@ public class CircularLL {
         }
     }
 
+    private void delete(int val) {
+        if (val == head.val) {
+            tail.next = head.next;
+            head = tail.next;
+            return;
+        }
+        Node temp = head;
+        while (temp.val != head.val) {
+            if (temp.val == val) {
+                temp.next = temp.next.next;
+            }
+            temp = temp.next;
+        }
+    }
+
     public static void main(String[] args) {
         CircularLL list = new CircularLL();
         list.add(1);
         list.add(2);
         list.add(3);
         list.add(4);
+        list.delete(2);
         list.display();
     }
 
