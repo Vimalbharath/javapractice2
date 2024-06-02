@@ -8,6 +8,7 @@ public class DynamicStack extends CustomStack {
             int[] temp = new int[ptr * 2];
             for (int i = 0; i < data.length; i++) {
                 temp[i] = data[i];
+                data = temp;
             }
         }
         return super.push(item);
