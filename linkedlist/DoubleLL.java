@@ -34,9 +34,11 @@ public class DoubleLL {
         Node node = new Node(value);
         if (head == null) {
             head = node;
+            return;
         }
         node.next = head;
-        node = head;
+        head.prev = node;
+        head = node;
         size = size + 1;
     }
 
