@@ -38,13 +38,15 @@ public class CircularLL {
 
     private void display() {
         Node temp = head;
-        do {
-            System.out.print(temp.val + " -> ");
-            temp = temp.next;
+        if (head != null) {
+            do {
+                System.out.print(temp.val + " -> ");
+                temp = temp.next;
 
-        } while (temp.val != head.val);
-        System.out.print("START");
-        System.out.println();
+            } while (temp.val != head.val);
+            System.out.print("START");
+            System.out.println();
+        }
     }
 
     public static void main(String[] args) {
