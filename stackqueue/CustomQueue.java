@@ -28,8 +28,8 @@ public class CustomQueue {
             throw new Exception("Stack is Empty");
         }
         int[] temp = new int[data.length];
-        for (int i = 0; i < data.length; i++) {
-            temp[i] = data[i + 1];
+        for (int i = 1; i < ptr + 1; i++) {
+            temp[i - 1] = data[i];
 
         }
         data = temp;
