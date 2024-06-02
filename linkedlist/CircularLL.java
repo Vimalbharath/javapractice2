@@ -62,12 +62,12 @@ public class CircularLL {
 
         do {
             Node n = temp.next;
-            if (temp.val == val) {
+            if (n.val == val) {
                 temp.next = n.next;
                 break;
             }
             temp = temp.next;
-        } while (temp.val != head.val);
+        } while (temp != head);
     }
 
     public static void main(String[] args) {
@@ -76,7 +76,7 @@ public class CircularLL {
         list.add(2);
         list.add(3);
         list.add(4);
-        list.delete(2);
+        list.delete(1);
         list.display();
     }
 
