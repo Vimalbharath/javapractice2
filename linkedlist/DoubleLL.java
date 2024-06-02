@@ -34,6 +34,7 @@ public class DoubleLL {
         Node node = new Node(value);
         if (head == null) {
             head = node;
+            size = size + 1;
             return;
         }
         node.next = head;
@@ -52,11 +53,29 @@ public class DoubleLL {
         System.out.println();
     }
 
+    public void displayrev() {
+        Node temp = head;
+        Node last = temp;
+        while (temp != null) {
+            last = temp;
+            temp = temp.next;
+        }
+        while (last != null) {
+
+            System.out.print(last.val + " -> ");
+            last = last.prev;
+        }
+        System.out.print("START");
+        System.out.println();
+
+    }
+
     public static void main(String[] args) {
         DoubleLL list = new DoubleLL();
         list.addFirst(1);
         list.addFirst(2);
         list.display();
+        list.displayrev();
     }
 
 }
