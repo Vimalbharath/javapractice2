@@ -32,6 +32,7 @@ public class CircularLL {
         }
         node.next = head;
         tail.next = node;
+        tail = node;
 
     }
 
