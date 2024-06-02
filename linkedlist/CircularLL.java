@@ -50,18 +50,24 @@ public class CircularLL {
     }
 
     private void delete(int val) {
+        Node temp = head;
+        if (head == null) {
+            return;
+        }
         if (val == head.val) {
             tail.next = head.next;
             head = tail.next;
             return;
         }
-        Node temp = head;
-        while (temp.val != head.val) {
+
+        do {
+            Node n = temp.next;
             if (temp.val == val) {
-                temp.next = temp.next.next;
+                temp.next = n.next;
+                break;
             }
             temp = temp.next;
-        }
+        } while (temp.val != head.val);
     }
 
     public static void main(String[] args) {
