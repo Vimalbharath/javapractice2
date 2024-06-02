@@ -27,13 +27,14 @@ public class CustomQueue {
         if (isEmpty()) {
             throw new Exception("Stack is Empty");
         }
+        int ans = data[0];
         int[] temp = new int[data.length];
-        for (int i = 1; i < ptr + 1; i++) {
+        for (int i = 1; i < data.length; i++) {
             temp[i - 1] = data[i];
 
         }
         data = temp;
-        return data[0];
+        return ans;
     }
 
     public boolean isFull() {
@@ -52,6 +53,16 @@ public class CustomQueue {
         stack.push(4);
         stack.push(5);
 
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
         System.out.println(stack.pop());
         System.out.println(stack.pop());
 
