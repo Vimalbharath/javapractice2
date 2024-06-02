@@ -70,10 +70,38 @@ public class DoubleLL {
 
     }
 
+    public void addAfter(int value, int after) {
+        Node prev = find(after);
+        if (prev == null) {
+            return;
+        }
+        Node node = new Node(value);
+        if (prev.next != null) {
+            prev.next.prev = node;
+
+        }
+        node.next = prev.next;
+        node.prev = prev;
+        prev.next = node;
+    }
+
+    public Node find(int val) {
+        Node temp = head;
+        while (temp != null) {
+            if (temp.val == val) {
+                return temp;
+            }
+            temp = temp.next;
+        }
+        System.out.println("Node not found");
+        return null;
+    }
+
     public static void main(String[] args) {
         DoubleLL list = new DoubleLL();
         list.addFirst(1);
         list.addFirst(2);
+        list.addAfter(100, 2);
         list.display();
         list.displayrev();
     }
