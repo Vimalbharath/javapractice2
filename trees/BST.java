@@ -59,6 +59,19 @@ public class BST {
         }
     }
 
+    public void display() {
+        display(this.root, "Root Node:");
+    }
+
+    public void display(Node node, String details) {
+        if (node == null) {
+            return;
+        }
+        System.out.println(details + node.value);
+        display(node.left, "Left Child of " + node.value + " :");
+        display(node.right, "Right Child of " + node.value + " :");
+    }
+
     public void preOrder(Node node) {
         if (node == null) {
             return;
@@ -73,5 +86,6 @@ public class BST {
         int[] nums = { 5, 2, 7, 1, 4, 6, 9, 8, 3, 10 };
         tree.populate(nums);
         tree.preOrder(root);
+        tree.display();
     }
 }
