@@ -82,9 +82,14 @@ public class AVL extends BST {
 
     public static void main(String[] args) {
         AVL tree = new AVL();
-        int[] nums = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-        tree.populate(nums);
-        tree.preOrder(root);
-        tree.display();
+        // int[] nums = { 1, 2, 3, 4, 5, 6, 7, 8 };
+        // tree.populate(nums);
+
+        for (int i = 0; i < 1000; i++) {
+            tree.insert(i);
+        }
+        System.out.println(tree.height(root));
+        // tree.preOrder(root);
+        // tree.display();
     }
 }
