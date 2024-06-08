@@ -3,10 +3,10 @@ package trees;
 public class BST {
 
     public class Node {
-        private int value;
-        private Node left;
-        private Node right;
-        private int height;
+        int value;
+        Node left;
+        Node right;
+        int height;
 
         public Node(int value) {
             this.value = value;
