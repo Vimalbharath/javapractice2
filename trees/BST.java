@@ -18,7 +18,7 @@ public class BST {
 
     }
 
-    private static Node root;
+    public static Node root;
 
     public BST() {
     }
