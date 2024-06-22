@@ -6,7 +6,7 @@ import java.util.Map;
 public class CountSum2 {
 
     public static void main(String[] args) {
-        int[] coins = { 1, 2 };
+        int[] coins = { 2, 1, 5 };
         int amount = 5;
         int combinations = change(amount, coins);
         System.out.println("Number of combinations: " + combinations);
