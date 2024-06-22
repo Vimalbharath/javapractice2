@@ -32,10 +32,8 @@ public class CountSum2 {
         for (int denomination : denominations) {
             int remainingAmount = targetAmount - denomination;
 
-            int ways = change(remainingAmount, denominations);
-            if (ways != 0)
-                combinations += ways;
-
+            // Consider only combinations that don't include the current denomination
+            combinations += change(remainingAmount, denominations);
         }
 
         // Store the result in memo for future use
