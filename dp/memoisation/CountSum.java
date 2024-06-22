@@ -6,8 +6,8 @@ import java.util.Map;
 public class CountSum {
 
     public static void main(String[] args) {
-        int[] coins = { 1, 2, 5 };
-        int ans = change(5, coins);
+        int[] coins = { 1 };
+        int ans = change(3, coins);
         System.out.println(ans);
     }
 
@@ -24,9 +24,9 @@ public class CountSum {
         for (int value : coins) {
             int remainder = amount - value;
             change(remainder, coins);
-            if (change(remainder, coins) == 1) {
-                count = count + 1;
-            }
+            // if (amount == 0) {
+            // count = count + 1;
+            // }
         }
         return count;
     }
