@@ -12,22 +12,20 @@ public class CountSum {
     }
 
     private static Map<Integer, Integer> memo = new HashMap<>();
-    static int count = 0;
 
     public static int change(int amount, int[] coins) {
         if (amount == 0) {
             return 1;
-        }
-        if (amount < 0) {
+        } else if (amount < 0) {
+
             return 0;
         }
-        for (int value : coins) {
-            int remainder = amount - value;
-            change(remainder, coins);
-            // if (amount == 0) {
-            // count = count + 1;
-            // }
+        int combinations = 0;
+        for (int denomination : coins) {
+            int remainingAmount = amount - denomination;
+            // Recursively calculate combinations for the remaining amount
+            combinations += change(remainingAmount, coins);
         }
-        return count;
+        return combinations;
     }
 }
