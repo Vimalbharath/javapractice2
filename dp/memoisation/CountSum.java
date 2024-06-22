@@ -6,27 +6,28 @@ import java.util.Map;
 public class CountSum {
 
     public static void main(String[] args) {
-        int[] coins = { 2, 5 };
-        boolean ans = change(5, coins);
+        int[] coins = { 1, 2, 5 };
+        int ans = change(5, coins);
         System.out.println(ans);
     }
 
     private static Map<Integer, Integer> memo = new HashMap<>();
+    static int count = 0;
 
-    public static boolean change(int amount, int[] coins) {
+    public static int change(int amount, int[] coins) {
         if (amount == 0) {
-            return true;
+            return 1;
         }
         if (amount < 0) {
-            return false;
+            return 0;
         }
         for (int value : coins) {
             int remainder = amount - value;
             change(remainder, coins);
-            if (change(remainder, coins) == true) {
-                return true;
+            if (change(remainder, coins) == 1) {
+                count = count + 1;
             }
         }
-        return false;
+        return count;
     }
 }
