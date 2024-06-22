@@ -6,8 +6,8 @@ import java.util.List;
 public class AllSum {
 
     public static void main(String[] args) {
-        int[] coins = { 1, 2, 5 };
-        int amount = 5;
+        int[] coins = { 1, 2, 5, 10, 20, 50 };
+        int amount = 10;
         List<List<Integer>> combinations = findCombinations(coins, amount);
         System.out.println("All combinations:");
         for (List<Integer> combination : combinations) {
