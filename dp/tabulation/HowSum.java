@@ -33,7 +33,8 @@ public class HowSum {
                             table.set(i + b, new ArrayList<>());
 
                         List<Integer> current = table.get(i + b);
-                        if (current.size() <= table.get(i).size()) {
+
+                        if (current.size() < (table.get(i).size() + 1)) {
                             current.addAll(table.get(i));
                             current.add(b);
                             for (int sum : current) {
@@ -41,6 +42,7 @@ public class HowSum {
                                 if (sum == i)
                                     return table;
                             }
+
                         }
 
                     }
