@@ -34,6 +34,11 @@ public class HowSum {
                         List<Integer> current = table.get(i + b);
                         current.addAll(table.get(i));
                         current.add(b);
+                        for (int sum : current) {
+                            sum = sum + sum;
+                            if (sum == i)
+                                return table;
+                        }
 
                     }
                 }
