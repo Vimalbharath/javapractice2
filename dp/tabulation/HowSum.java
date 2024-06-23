@@ -9,11 +9,11 @@ public class HowSum {
         int[] coins = { 2, 3, 5 };
         List<List<Integer>> ans = coinChange(coins, 8);
         System.out.println(ans);
-        List<List<Integer>> table = new ArrayList<>(11 + 1);
-        for (int i = 0; i < 11 + 1; i++) {
-            table.add(null);
-        }
-        System.out.println(table);
+        // List<List<Integer>> table = new ArrayList<>(11 + 1);
+        // for (int i = 0; i < 11 + 1; i++) {
+        // table.add(null);
+        // }
+        // System.out.println(table);
 
     }
 
@@ -31,13 +31,16 @@ public class HowSum {
                     {
                         if (table.get(i + b) == null)
                             table.set(i + b, new ArrayList<>());
+
                         List<Integer> current = table.get(i + b);
-                        current.addAll(table.get(i));
-                        current.add(b);
-                        for (int sum : current) {
-                            sum = sum + sum;
-                            if (sum == i)
-                                return table;
+                        if (current.size() <= table.get(i).size()) {
+                            current.addAll(table.get(i));
+                            current.add(b);
+                            for (int sum : current) {
+                                sum = sum + sum;
+                                if (sum == i)
+                                    return table;
+                            }
                         }
 
                     }
