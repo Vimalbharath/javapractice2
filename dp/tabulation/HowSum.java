@@ -6,8 +6,8 @@ import java.util.List;
 public class HowSum {
 
     public static void main(String[] args) {
-        int[] coins = { 2, 3, 5 };
-        List<List<Integer>> ans = coinChange(coins, 8);
+        int[] coins = { 1, 5, 2 };
+        List<List<Integer>> ans = coinChange(coins, 11);
         System.out.println(ans);
         // List<List<Integer>> table = new ArrayList<>(11 + 1);
         // for (int i = 0; i < 11 + 1; i++) {
@@ -31,17 +31,32 @@ public class HowSum {
                     {
                         if (table.get(i + b) == null)
                             table.set(i + b, new ArrayList<>());
+                        // if(table.get(i+b).size()>)
 
                         List<Integer> current = table.get(i + b);
 
-                        if (current.size() < (table.get(i).size() + 1)) {
-                            current.addAll(table.get(i));
-                            current.add(b);
-                            for (int sum : current) {
-                                sum = sum + sum;
-                                if (sum == i)
-                                    return table;
-                            }
+                        List<Integer> fresh = new ArrayList<>();
+                        fresh.add(b);
+                        fresh.addAll(current);
+                        int sum = 0;
+                        for (int value : fresh) {
+                            sum = sum + value;
+                        }
+                        if (sum == i)
+                            table.set(i + b, fresh);
+                        fresh.addAll(table.get(i));
+
+                        System.out.println(sum);
+
+                        if (sum <= i && current.size() < fresh.size()) {
+                            current.clear();
+                            table.set(i + b, fresh);
+                            // int sum = 0;
+                            // for (int value : current) {
+                            // sum = sum + value;
+                            // if (sum == i)
+                            // return table;
+                            // }
 
                         }
 
