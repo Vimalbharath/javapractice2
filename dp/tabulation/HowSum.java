@@ -32,6 +32,7 @@ public class HowSum {
                         if (table.get(i + b) == null)
                             table.set(i + b, new ArrayList<>());
                         List<Integer> current = table.get(i + b);
+                        current.addAll(table.get(i));
                         current.add(b);
 
                     }
