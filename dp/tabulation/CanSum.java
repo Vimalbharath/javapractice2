@@ -3,7 +3,7 @@ package dp.tabulation;
 public class CanSum {
 
     public static void main(String[] args) {
-        int[] coins = { 1, 2, 5 };
+        int[] coins = { 5 };
         boolean ans = coinChange(coins, 11);
         System.out.println(ans);
 
@@ -15,7 +15,8 @@ public class CanSum {
         for (int i = 0; i < table.length; i++) {
             if (table[i] == true) {
                 for (int b : coins) {
-                    table[i + b] = true;
+                    if (i + b < table.length)
+                        table[i + b] = true;
                 }
 
             }
