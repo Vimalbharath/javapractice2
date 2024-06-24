@@ -6,8 +6,8 @@ import java.util.List;
 public class HowSum {
 
     public static void main(String[] args) {
-        int[] coins = { 1, 5, 25 };
-        List<List<Integer>> ans = coinChange(coins, 100);
+        int[] coins = { 1, 5, 2 };
+        List<List<Integer>> ans = coinChange(coins, 11);
         System.out.println(ans);
         // List<List<Integer>> table = new ArrayList<>(11 + 1);
         // for (int i = 0; i < 11 + 1; i++) {
