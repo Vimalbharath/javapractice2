@@ -38,14 +38,14 @@ public class HowSum {
                         List<Integer> fresh = new ArrayList<>();
                         fresh.add(b);
                         fresh.addAll(table.get(i));
-                        int sum = 0;
-                        for (int value : fresh) {
-                            sum = sum + value;
-                        }
+                        // int sum = 0;
+                        // for (int value : fresh) {
+                        // sum = sum + value;
+                        // }
                         // if (sum == i)
                         // table.set(i + b, fresh);
 
-                        System.out.println(sum);
+                        // System.out.println(sum);
 
                         if (current.isEmpty() || current.size() > fresh.size()) {
 
