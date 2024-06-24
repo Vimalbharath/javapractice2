@@ -37,19 +37,18 @@ public class HowSum {
 
                         List<Integer> fresh = new ArrayList<>();
                         fresh.add(b);
-                        fresh.addAll(current);
+                        fresh.addAll(table.get(i));
                         int sum = 0;
                         for (int value : fresh) {
                             sum = sum + value;
                         }
-                        if (sum == i)
-                            table.set(i + b, fresh);
-                        fresh.addAll(table.get(i));
+                        // if (sum == i)
+                        // table.set(i + b, fresh);
 
                         System.out.println(sum);
 
-                        if (sum <= i && current.size() < fresh.size()) {
-                            current.clear();
+                        if (current.isEmpty() || current.size() > fresh.size()) {
+
                             table.set(i + b, fresh);
                             // int sum = 0;
                             // for (int value : current) {
