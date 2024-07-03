@@ -41,11 +41,12 @@ public class ZigZag {
             if (!reverse) {
                 for (int i = 0; i < sizee; i++) {
                     TreeNode node = queue.poll();
-                    if (node.left != null) {
-                        queue.offer(node.left);
-                    }
+
                     if (node.right != null) {
                         queue.offer(node.right);
+                    }
+                    if (node.left != null) {
+                        queue.offer(node.left);
                     }
 
                     level.add(node.val);
@@ -65,6 +66,7 @@ public class ZigZag {
             }
 
             result.add(level);
+            reverse = !reverse;
         }
 
         return result;
