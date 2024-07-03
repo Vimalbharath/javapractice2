@@ -39,12 +39,13 @@ public class ZigZag {
 
             for (int i = 0; i < sizee; i++) {
                 TreeNode node = queue.poll();
-                if (node.right != null) {
-                    queue.offer(node.right);
-                }
                 if (node.left != null) {
                     queue.offer(node.left);
                 }
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }
+
                 level.add(node.val);
             }
             result.add(0, level);
