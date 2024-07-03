@@ -27,6 +27,10 @@ public class ZigZag {
 
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
+        if (root == null) {
+            return result;
+        }
+
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.offer(root);
         while (!queue.isEmpty()) {
@@ -38,10 +42,11 @@ public class ZigZag {
                     queue.offer(node.right);
                 if (node.left != null)
                     queue.offer(node.left);
+                level.add(node.val);
             }
-            level.add(node.val);
+            result.add(level);
         }
-        result.addAll(level);
+
         return result;
     }
 }
