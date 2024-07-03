@@ -35,16 +35,19 @@ public class ZigZag {
         queue.offer(root);
         while (!queue.isEmpty()) {
             List<Integer> level = new ArrayList<>();
+            int sizee = queue.size();
             TreeNode node = queue.poll();
-            for (int i = 0; i < queue.size(); i++) {
+            for (int i = 0; i < sizee; i++) {
 
-                if (node.right != null)
+                if (node.right != null) {
                     queue.offer(node.right);
-                if (node.left != null)
+                }
+                if (node.left != null) {
                     queue.offer(node.left);
+                }
                 level.add(node.val);
             }
-            result.add(level);
+            result.add(0, level);
         }
 
         return result;
