@@ -31,14 +31,14 @@ public class ZigZag {
             return result;
         }
 
-        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         while (!queue.isEmpty()) {
             List<Integer> level = new ArrayList<>();
             int sizee = queue.size();
-            TreeNode node = queue.poll();
-            for (int i = 0; i < sizee; i++) {
 
+            for (int i = 0; i < sizee; i++) {
+                TreeNode node = queue.poll();
                 if (node.right != null) {
                     queue.offer(node.right);
                 }
