@@ -31,6 +31,8 @@ public class AllPathSum {
             return sum = sum + 0;
         }
         sum = (10 * sum) + root.val;
-        return helper(root.left, sum) + helper(root.right, sum);
+        helper(root.left, sum);
+        helper(root.right, sum);
+        return sum;
     }
 }
