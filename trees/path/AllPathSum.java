@@ -28,7 +28,7 @@ public class AllPathSum {
 
     public int helper(TreeNode root, int sum) {
         if (root == null) {
-            return sum = sum + 0;
+            return 0;
         }
         sum = (10 * sum) + root.val;
         if (root.left == null && root.right == null) {
