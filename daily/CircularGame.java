@@ -1,20 +1,12 @@
 package daily;
 
-import linkedlist.CircularLL;
-
 public class CircularGame {
 
-    class Node {
-        int val;
-        Node next;
-
+    int findTheWinner(int n, int k) {
+        int winner = 1;
+        for (int i = 2; i <= n; i++) {
+            winner = (winner + k - 1) % i + 1;
+        }
+        return winner;
     }
-
-    public int findTheWinner(int n, int k) {
-        CircularLL list=new CircularLL();
-       while(list
-
-       }
-}
-
 }
