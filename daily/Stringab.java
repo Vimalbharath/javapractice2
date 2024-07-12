@@ -9,25 +9,26 @@ public class Stringab {
         // char ch = s.charAt(0);
         String up = s;
         // String p = "";
-        return skipletter(up, 0, 0);
+        int ans = 0;
+        return skipletter(up, x, y, ans);
 
     }
 
-    public int skipletter(String up, int x, int y) {
+    public int skipletter(String up, int x, int y, int ans) {
         if (up.isEmpty()) {
 
-            return Math.max(x, y);
+            return ans;
         }
         // char ch = up.charAt(0);
         if (up.startsWith("ab")) {
 
-            return skipletter(up.substring(2), x + 1, y);
+            return skipletter(up.substring(2), x, y, ans + x);
         }
         if (up.startsWith("ba")) {
 
-            return skipletter(up.substring(2), x, y + 1);
+            return skipletter(up.substring(2), x, y, ans + y);
         }
 
-        return Math.max(x, y);
+        return ans;
     }
 }
