@@ -45,4 +45,35 @@ public class CourseSchedule {
 
         return ans.size() == n;
     }
+
+    public boolean canFinish2(int numCourses, int[][] prerequisites) {
+        List<Integer> ans = new ArrayList<>();
+        int[] degree = new int[numCourses + 1];
+        for (int[] course : prerequisites) {
+            // degree[course[0]]--;
+            degree[course[1]]++;
+        }
+        Queue<Integer> queue = new LinkedList<>();
+        for (int i = 0; i <= numCourses; i++) {
+            if (degree[i] == 0) {
+                queue.offer(i);
+            }
+        }
+
+        while (!queue.isEmpty()) {
+            int current = queue.poll();
+            ans.add(current);
+
+            if (adj[current] != null) {
+                for (int next : adj[current]) {
+                    degree[next]--;
+                    if (degree[next] == 0) {
+                        queue.offer(next);
+                    }
+                }
+            }
+        }
+
+        return ans.size() == numCourses;
+    }
 }
