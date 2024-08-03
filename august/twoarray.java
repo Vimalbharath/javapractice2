@@ -6,10 +6,11 @@ public class twoarray {
 
         insertionsort(arr);
         insertionsort(target);
-        if (target.equals(arr)) {
-            return true;
-        }
-        return false;
+        for (int i = 0; i < arr.length; i++)
+            if (arr[i] != target[i])
+                return false;
+
+        return true;
 
     }
 
