@@ -7,10 +7,15 @@ public class hello {
         System.out.println("Hello Vimal");
         Scanner input = new Scanner(System.in);
         System.out.println("Enter first value:");
-        int x = input.nextInt();
+        // int x = input.nextInt();
         System.out.println("Enter second value:");
-        int y = input.nextInt();
-        sum(x, y);
+        // int y = input.nextInt();
+        sum(5, 6);
+        System.out.println("Array:");
+        int arr[] = { 1, 2, 3, 4, 5 };
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
     }
 
     private static void sum(int i, int j) {
