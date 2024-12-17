@@ -13,14 +13,9 @@ public class cyclic {
 
     public static void cyclicsort(int[] arr) {
         for (int i = 0; i < arr.length - 1; i++) {
-
-            int j = 0;
-            while (j < arr.length - 1) {
-                int correct = j + 1;
-                if (arr[j] != correct) {
-                    swap(arr, j, j + 1);
-                }
-                j++;
+            int correct = i + 1;
+            while (arr[i] != correct) {
+                swap(arr, i, arr[i] - 1);
             }
 
         }
