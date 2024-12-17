@@ -14,16 +14,16 @@ public class sorting {
     public static void selection(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             int last = arr.length - 1 - i;
-            int max = maxnum(arr, last);
+            int max = maxindex(arr, last);
             swap(arr, last, max);
         }
     }
 
-    public static int maxnum(int[] arr, int last) {
-        int max = arr[0];
+    public static int maxindex(int[] arr, int last) {
+        int max = 0;
         for (int i = 1; i <= last; i++) {
-            if (arr[i] > max) {
-                max = arr[i];
+            if (arr[i] > arr[max]) {
+                max = i;
             }
         }
         return max;
