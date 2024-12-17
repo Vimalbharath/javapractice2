@@ -6,9 +6,19 @@ public class sorting {
     public static void main(String[] args) {
         int arr[] = { 5, 8, 9, 3, 4, 6, 7, 2, 1 };
         System.out.println(Arrays.toString(arr));
-        selection(arr);
+        insertion(arr);
         System.out.println(Arrays.toString(arr));
 
+    }
+
+    public static void insertion(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 1; j > i; j--) {
+                if (arr[j] < arr[j - 1]) {
+                    swap(arr, j, j - 1);
+                }
+            }
+        }
     }
 
     public static void selection(int[] arr) {
