@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class Cyclic {
     public static void main(String[] args) {
-        int[] arr = { 1, 6, 5, 4, 3, 2, 7 };
-        cyclicsort3(arr);
+        int[] arr = { 5, 8, 9, 3, 4, 6, 7, 2, 1 };
+        cyclicsort(arr);
         System.out.println(Arrays.toString(arr));
     }
 
@@ -31,6 +31,7 @@ public class Cyclic {
         }
     }
 
+    // failing for { 5, 8, 9, 3, 4, 6, 7, 2, 1 }
     private static void cyclicsort(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] != arr[arr[i] - 1]) {
