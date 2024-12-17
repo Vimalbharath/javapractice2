@@ -6,9 +6,27 @@ public class sorting {
     public static void main(String[] args) {
         int arr[] = { 5, 8, 9, 3, 4, 6, 7, 2, 1 };
         System.out.println(Arrays.toString(arr));
-        bubblesort(arr);
+        selection(arr);
         System.out.println(Arrays.toString(arr));
 
+    }
+
+    public static void selection(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            int last = arr.length - 1 - i;
+            int max = maxnum(arr, last);
+            swap(arr, last, max);
+        }
+    }
+
+    public static int maxnum(int[] arr, int last) {
+        int max = arr[0];
+        for (int i = 1; i <= last; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        return max;
     }
 
     public static void bubblesort(int[] arr) {
