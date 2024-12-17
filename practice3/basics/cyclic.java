@@ -19,7 +19,9 @@ public class cyclic {
                 if (arr[j] != correct) {
                     swap(arr, j, correct);
                 }
+                j++;
             }
+
         }
 
     }
