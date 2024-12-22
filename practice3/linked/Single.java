@@ -61,23 +61,23 @@ public class Single {
             System.out.println("Enter correct index");
             return;
         }
-        size = size + 1;
-        if (head == null) {
-            head = node;
-            tail = head;
+
+        if (index == 0) {
+            addFirst(value);
             return;
         }
         if (index == size) {
-            tail.next = node;
-            tail = node;
+            addLast(value);
             return;
         }
         Node temp = head;
-        for (int i = 1; i < index - 1; i++) {
+        for (int i = 1; i < index; i++) {
             temp = temp.next;
         }
         node.next = temp.next;
-        node = temp.next;
+        temp.next = node;
+        // swap
+        size = size + 1;
 
     }
 
@@ -100,7 +100,7 @@ public class Single {
         ll.addFirst(2);
         ll.addFirst(3);
         ll.addLast(4);
-        ll.addatindex(5, 5);
+        ll.addatindex(5, 2);
         ll.display();
     }
 }
