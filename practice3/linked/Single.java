@@ -87,7 +87,38 @@ public class Single {
         if (head == null) {
             tail = head;
         }
+        size = size - 1;
         return val;
+    }
+
+    public int deletelast() {
+        // System.out.println(size);
+        if (size == 1) {
+
+            return deletefirst();
+        }
+        int val = head.value;
+        Node prev = prevnode(size);
+        tail = prev;
+        tail.next = null;
+        size = size - 1;
+        return val;
+    }
+
+    public Node prevnode(int size) {
+        Node node = head;
+        if (node == null) {
+            System.out.println("empty");
+            return node;
+        }
+        if (size == 1) {
+            return null;
+        }
+        for (int i = 1; i < size - 1; i++) {
+            node = node.next;
+        }
+        return node;
+
     }
 
     public void display() {
@@ -110,8 +141,13 @@ public class Single {
         ll.addFirst(3);
         ll.addLast(4);
         ll.addatindex(5, 2);
-        ll.display();
+        // ll.display();
         ll.deletefirst();
+        ll.display();
+        ll.deletelast();
+        ll.deletelast();
+        ll.deletelast();
+        ll.deletelast();
         ll.display();
     }
 }
