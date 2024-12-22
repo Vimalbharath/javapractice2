@@ -63,16 +63,20 @@ public class AVL {
         if (node.value < value) {
             node.right = insert(value, node.right);
         }
+        node.height = Math.max(node.left.height, node.right.height) + 1;
         System.out.println(node.value);
         return node;
     }
 
     public void inorder() {
         inorder(root);
+
     }
 
     public void inorder(Node node) {
+        System.out.println("bye");
         if (node == null) {
+            System.out.println("not inserted");
             return;
         }
         System.out.println(node.value);
