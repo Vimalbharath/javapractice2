@@ -18,8 +18,8 @@ public class CustomStack {
             System.out.println("stack full");
             return false;
         }
-        data[ptr] = item;
         ptr++;
+        data[ptr] = item;
         return true;
     }
 
@@ -32,7 +32,7 @@ public class CustomStack {
     }
 
     public boolean isFull() {
-        if (ptr == data.length) {
+        if (ptr == data.length - 1) {
             return true;
         }
         return false;
@@ -52,6 +52,8 @@ public class CustomStack {
         stack.push(3);
         stack.push(4);
         stack.push(5);
+        stack.push(5);
+        System.out.println(stack.pop());
         System.out.println(stack.pop());
         System.out.println(stack.pop());
         System.out.println(stack.pop());
