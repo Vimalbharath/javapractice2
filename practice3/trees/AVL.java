@@ -26,11 +26,11 @@ public class AVL {
 
     public Node root;
 
-    public int height(Node root) {
-        if (root == null) {
+    public int height(Node node) {
+        if (node == null) {
             return -1;
         }
-        return root.height;
+        return node.height;
     }
 
     public void display(Node root) {
@@ -46,25 +46,25 @@ public class AVL {
     }
 
     public Node insert(int value) {
-        return insert(value, root);
+        return root = insert(value, root);
 
     }
 
     private Node insert(int value, Node node) {
-        System.out.println("hi");
+        // System.out.println("hi");
 
         if (node == null) {
             node = new Node(value);
             return node;
         }
-        if (node.value > value) {
+        if (value < node.value) {
             node.left = insert(value, node.left);
         }
-        if (node.value < value) {
+        if (value > node.value) {
             node.right = insert(value, node.right);
         }
-        node.height = Math.max(node.left.height, node.right.height) + 1;
-        System.out.println(node.value);
+        node.height = Math.max(height(node.left), height(node.right)) + 1;
+        // System.out.println(node.value);
         return node;
     }
 
@@ -74,9 +74,9 @@ public class AVL {
     }
 
     public void inorder(Node node) {
-        System.out.println("bye");
+        // System.out.println("bye");
         if (node == null) {
-            System.out.println("not inserted");
+            // System.out.println("not inserted");
             return;
         }
         System.out.println(node.value);
