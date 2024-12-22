@@ -33,10 +33,24 @@ public class Single {
         Node node = new Node(value);
         if (head == null) {
             head = node;
+            tail = head;
             return;
         }
         node.next = head;
         head = node;
+        size = size + 1;
+
+    }
+
+    public void addLast(int value) {
+        Node node = new Node(value);
+        if (head == null) {
+            head = node;
+            tail = head;
+            return;
+        }
+        tail.next = node;
+        tail = node;
         size = size + 1;
 
     }
@@ -59,6 +73,7 @@ public class Single {
         ll.addFirst(1);
         ll.addFirst(2);
         ll.addFirst(3);
+        ll.addLast(4);
         ll.display();
     }
 }
