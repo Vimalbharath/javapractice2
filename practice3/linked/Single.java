@@ -55,6 +55,32 @@ public class Single {
 
     }
 
+    public void addatindex(int value, int index) {
+        Node node = new Node(value);
+        if (index > size) {
+            System.out.println("Enter correct index");
+            return;
+        }
+        size = size + 1;
+        if (head == null) {
+            head = node;
+            tail = head;
+            return;
+        }
+        if (index == size) {
+            tail.next = node;
+            tail = node;
+            return;
+        }
+        Node temp = head;
+        for (int i = 1; i < index - 1; i++) {
+            temp = temp.next;
+        }
+        node.next = temp.next;
+        node = temp.next;
+
+    }
+
     public void display() {
         Node node = head;
         while (node != null) {
@@ -74,6 +100,7 @@ public class Single {
         ll.addFirst(2);
         ll.addFirst(3);
         ll.addLast(4);
+        ll.addatindex(5, 5);
         ll.display();
     }
 }
