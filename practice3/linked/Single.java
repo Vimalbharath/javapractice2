@@ -31,6 +31,7 @@ public class Single {
 
     public void addFirst(int value) {
         Node node = new Node(value);
+        size = size + 1;
         if (head == null) {
             head = node;
             tail = head;
@@ -38,12 +39,12 @@ public class Single {
         }
         node.next = head;
         head = node;
-        size = size + 1;
 
     }
 
     public void addLast(int value) {
         Node node = new Node(value);
+        size = size + 1;
         if (head == null) {
             head = node;
             tail = head;
@@ -51,7 +52,6 @@ public class Single {
         }
         tail.next = node;
         tail = node;
-        size = size + 1;
 
     }
 
