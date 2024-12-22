@@ -43,11 +43,13 @@ public class Single {
 
     public void display() {
         Node node = head;
-        do {
-            if (node.next != null)
-                System.out.print(node.value);
+        while (node != null) {
+
+            System.out.print(node.value);
             System.out.print("->");
-        } while (node.next != null);
+            node = node.next;
+        }
+
         System.out.print("NULL");
 
     }
