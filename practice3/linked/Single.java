@@ -81,6 +81,15 @@ public class Single {
 
     }
 
+    public int deletefirst() {
+        int val = head.value;
+        head = head.next;
+        if (head == null) {
+            tail = head;
+        }
+        return val;
+    }
+
     public void display() {
         Node node = head;
         while (node != null) {
@@ -101,6 +110,8 @@ public class Single {
         ll.addFirst(3);
         ll.addLast(4);
         ll.addatindex(5, 2);
+        ll.display();
+        ll.deletefirst();
         ll.display();
     }
 }
