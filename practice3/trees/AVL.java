@@ -20,6 +20,10 @@ public class AVL {
         }
     }
 
+    public AVL() {
+
+    }
+
     public Node root;
 
     public int height(Node root) {
@@ -47,16 +51,19 @@ public class AVL {
     }
 
     private Node insert(int value, Node node) {
+        System.out.println("hi");
+
         if (node == null) {
-            Node temp = new Node(value);
-            return temp;
+            node = new Node(value);
+            return node;
         }
         if (node.value > value) {
-            Node left = insert(value, node.left);
+            node.left = insert(value, node.left);
         }
         if (node.value < value) {
-            Node right = insert(value, node.right);
+            node.right = insert(value, node.right);
         }
+        System.out.println(node.value);
         return node;
     }
 
@@ -64,19 +71,20 @@ public class AVL {
         inorder(root);
     }
 
-    public void inorder(Node root) {
-        if (root == null) {
+    public void inorder(Node node) {
+        if (node == null) {
             return;
         }
-        System.out.println(root.value);
-        inorder(root.left);
-        inorder(root.right);
+        System.out.println(node.value);
+        inorder(node.left);
+        inorder(node.right);
     }
 
     public static void main(String[] args) {
         AVL tree = new AVL();
         int arr[] = { 1, 2, 3, 4, 5 };
         tree.populate(arr);
+        tree.insert(0);
         tree.inorder();
 
     }
