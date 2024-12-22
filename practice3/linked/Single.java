@@ -98,7 +98,8 @@ public class Single {
             return deletefirst();
         }
         int val = head.value;
-        Node prev = prevnode(size);
+        // Node prev = prevnode(size);
+        Node prev = getnode(size - 2);
         tail = prev;
         tail.next = null;
         size = size - 1;
@@ -114,6 +115,16 @@ public class Single {
         if (size == 1) {
             return null;
         }
+        for (int i = 1; i < size - 1; i++) {
+            node = node.next;
+        }
+        return node;
+
+    }
+
+    public Node getnode(int size) {
+        Node node = head;
+
         for (int i = 1; i < size - 1; i++) {
             node = node.next;
         }
