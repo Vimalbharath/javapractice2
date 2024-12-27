@@ -33,14 +33,23 @@ public class maxlevel {
         queue.offer(root);
         List<Integer> result = new ArrayList<>();
         while (!queue.isEmpty()) {
-            TreeNode node = queue.poll();
-            result.add(node.val);
-            if (node.left != null) {
-                queue.offer(node.left);
+            int queuesize = queue.size();
+            int max = Integer.MIN_VALUE;
+            for (int i = 0; i < queuesize; i++) {
+                TreeNode node = queue.poll();
+                if (node.val > max) {
+                    max = node.val;
+                }
+                result.add(node.val);
+                if (node.left != null) {
+                    queue.offer(node.left);
+                }
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }
+
             }
-            if (node.right != null) {
-                queue.offer(node.right);
-            }
+            result.add(max);
         }
         return result;
     }
