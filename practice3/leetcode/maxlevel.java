@@ -29,6 +29,9 @@ public class maxlevel {
     }
 
     public List<Integer> largestValues(TreeNode root) {
+        if (root == null) {
+            return new ArrayList<>();
+        }
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.offer(root);
         List<Integer> result = new ArrayList<>();
@@ -40,7 +43,7 @@ public class maxlevel {
                 if (node.val > max) {
                     max = node.val;
                 }
-                result.add(node.val);
+                // result.add(node.val);
                 if (node.left != null) {
                     queue.offer(node.left);
                 }
