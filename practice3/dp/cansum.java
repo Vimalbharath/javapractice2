@@ -18,7 +18,9 @@ public class cansum {
         for (int number : arr) {
             // if (number <= sum) {
             // sum=sum-number;
-            return cansum1(arr, sum - number);
+            if (cansum1(arr, sum - number) == true) {
+                return true;
+            }
             // }
             // cansum1(arr, sum);
         }
