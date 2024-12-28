@@ -1,15 +1,15 @@
-const cansum=(arr,sum)=>{
-    
+const cansum=(arr,sum,memo={})=>{
+if(sum in memo) return memo[sum];
 if(sum<0) return false;
 if(sum===0) return true;
 
 for(num of arr){
    
-   if(cansum(arr,sum-num)===true) return true;
+   if(cansum(arr,sum-num,memo)===true) return memo[sum-num]=true;
 }
 
-return false;
+return memo[sum]=false;
 
 }
 
-console.log(cansum([5,7,3,4],7));
+console.log(cansum([7,14],300));
