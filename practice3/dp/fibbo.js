@@ -5,8 +5,8 @@ const fibbo=(n,memo={})=>{
     if(n<=1){
         return 1;
     }
-    result=fibbo(n-1)+fibbo(n-2);
-    return result;
+    memo[n]=fibbo(n-1,memo)+fibbo(n-2,memo);
+    return memo[n];
 }
 
 console.log(fibbo(45));
