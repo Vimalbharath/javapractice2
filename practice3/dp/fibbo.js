@@ -1,6 +1,6 @@
 const fibbo=(n,memo={})=>{
     if(n in memo){
-        return fibbo(n);
+        return memo[n];
     }
     if(n<=1){
         return 1;
