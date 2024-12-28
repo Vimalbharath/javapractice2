@@ -8,15 +8,19 @@ public class grid {
         System.out.println(ans);
     }
 
-    static HashMap<Integer, Long> memo = new HashMap<>();
+    static HashMap<String, Long> memo = new HashMap<>();
     static Long result = 0l;
 
     public static Long gridways(int row, int col) {
-        if (memo.containsKey(row,col))
+        String key = row + "," + col;
+        if (memo.containsKey(key)) {
+            return memo.get(key);
+        }
         if (row == 1 || col == 1) {
             return 1l;
         }
-        result= gridways(row - 1, col) + gridways(row, col - 1);
-        memo.put
+        result = gridways(row - 1, col) + gridways(row, col - 1);
+        memo.put(key, result);
+        return result;
     }
 }
