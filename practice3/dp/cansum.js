@@ -5,11 +5,11 @@ if(sum===0) return true;
 
 for(num in arr){
    
-   return cansum(arr,sum-num);
+   if(cansum(arr,sum-num)===true) return true;
 }
 
 return false;
 
 }
 
-console.log(cansum([5,2,3,4],7));
+console.log(cansum([5,7,3,4],7));
