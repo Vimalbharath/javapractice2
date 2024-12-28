@@ -3,7 +3,7 @@ const cansum=(arr,sum)=>{
 if(sum<0) return false;
 if(sum===0) return true;
 
-for(num in arr){
+for(num of arr){
    
    if(cansum(arr,sum-num)===true) return true;
 }
