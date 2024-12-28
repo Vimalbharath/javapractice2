@@ -4,18 +4,19 @@ import java.util.HashMap;
 
 public class fibbo {
 
-    static double result = 0;
+    static Long result = 0l;
+    public static HashMap<Integer, Long> memo = new HashMap<>();
 
-    public static int fibo(int n) {
-        HashMap<Integer,Double> memo=new HashMap<>();
-        if(memo.){
+    public static Long fibo(int n) {
 
+        if (memo.containsKey(n)) {
+            return memo.get(n);
         }
         if (n <= 1) {
-            return 1;
+            return 1l;
         }
-        result=fibo(n - 1) + fibo(n - 2);
-        memo.set(n)=result;
+        result = fibo(n - 1) + fibo(n - 2);
+        memo.put(n, result);
         return result;
     }
 
