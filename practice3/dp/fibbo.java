@@ -4,17 +4,19 @@ import java.util.HashMap;
 
 public class fibbo {
 
-    double result = 0;
+    static double result = 0;
 
     public static int fibo(int n) {
-        HashMap<Integer,Double> save=new HashMap<>();
-        if(save.get(fibo(n)){
+        HashMap<Integer,Double> memo=new HashMap<>();
+        if(memo.){
 
         }
         if (n <= 1) {
             return 1;
         }
-        return fibo(n - 1) + fibo(n - 2);
+        result=fibo(n - 1) + fibo(n - 2);
+        memo.set(n)=result;
+        return result;
     }
 
     public static void main(String[] args) {
