@@ -26,12 +26,12 @@ class Graph {
         dist[src] = 0;
 
         while (!pq.isEmpty()) {
-            int u = pq.poll().second;
+            int u = pq.poll().first;
 
             for (iPair v : adj.get(u)) {
                 if (dist[v.first] > dist[u] + v.second) {
                     dist[v.first] = dist[u] + v.second;
-                    pq.add(new iPair(dist[v.first], v.first));
+                    pq.add(new iPair(v.first, dist[v.first]));
                 }
             }
         }
